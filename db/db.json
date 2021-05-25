@@ -20,6 +20,13 @@
       "blockContact": false,
       "addressId": 3,
       "id": 3
+    },
+    {
+      "firstName": "Some",
+      "lastName": "Friends",
+      "blockContact": false,
+      "addressId": 4,
+      "id": 4
     }
   ],
   "addresses": [
@@ -40,6 +47,12 @@
       "city": "Mushroom Kingdom",
       "postCode": "N3 5NE",
       "id": 3
+    },
+    {
+      "street": "12 Wouldbe Nice",
+      "city": "Imaginary Land",
+      "postCode": "FY2 0QL",
+      "id": 4
     }
   ]
 }

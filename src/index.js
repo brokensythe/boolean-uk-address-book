@@ -18,6 +18,8 @@
 
 const viewSection = document.querySelector(".view-section");
 const contactsSection = document.querySelector(".contacts-section");
+const listEl = document.createElement("ul");
+listEl.className = "contacts-list";
 
 const state = {
   contacts: [],
@@ -39,8 +41,6 @@ function getContacts() {
 }
 
 function renderContactsList() {
-  const listEl = document.createElement("ul");
-  listEl.className = "contacts-list";
 
   for (let i = 0; i < state.contacts.length; i++) {
     const contact = state.contacts[i];
@@ -251,24 +251,35 @@ function listenNewContactButton() {
                 },
                 body: JSON.stringify(contact)
               })
-              }
-              )
-            
-            // main()
+              main()
+              })
           })
 
       formActions.append(submitButton)
 
     formEl.append(formHeading, firstNameLabel, firstNameInput, lastNameLabel, lastNameInput, streetLabel, streetInput, cityLabel, cityInput, postcodeLabel, postcodeInput, checkboxSection, formActions)
 
-    mainEl.append(formEl)
+    viewSection.append(formEl)
 
   });
 }
 
-const mainEl = document.querySelector(".view-section")
+function renderEditView () {
+  const contact = state.selectedContact
+
+  if (!contact) return
+
+  viewSection.innerHTML = ""
+
+  const containerEl = document.createElement("article");
+  containerEl.className = "center light-shadow address-card";
+
+  const headingEl = document.createElement("h1");
+}
 
 function main() {
+  listEl.innerHTML = ""
+
   listenNewContactButton();
   getContacts();
 }
